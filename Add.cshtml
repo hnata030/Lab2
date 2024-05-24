@@ -1,0 +1,35 @@
+﻿@model DataBaseModel
+
+@{
+    ViewData["Title"] = "Добавить данные";
+}
+
+<h2>Добавить данные</h2>
+
+<form asp-action="Add">
+    <div>
+        @Html.LabelFor(model => model.Name)
+        @Html.EditorFor(model => model.Name)
+    </div>
+    <div>
+        @Html.LabelFor(model => model.Address)
+        @Html.EditorFor(model => model.Address)
+    </div>
+    <div>
+        @Html.LabelFor(model => model.BirthDate)
+        @Html.EditorFor(model => model.BirthDate)
+    </div>
+    <div>
+        @Html.LabelFor(model => model.Email)
+        @Html.EditorFor(model => model.Email)
+    </div>
+    <div>
+        @Html.LabelFor(model => model.PhoneNumber)
+        @Html.EditorFor(model => model.PhoneNumber)
+    </div>
+    <div>
+        @Html.LabelFor(model => model.VacancyCount)
+        @Html.EditorFor(model => model.VacancyCount)
+    </div>
+    <button type="submit">Сохранить</button>
+</form>

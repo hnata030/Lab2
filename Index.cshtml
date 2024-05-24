@@ -1,0 +1,50 @@
+﻿@model IEnumerable<DataBaseModel>
+
+@{
+                /**/
+
+                ViewData["Title"] = "Индекс";
+}
+
+<h2>Индекс</h2>
+
+@if (Model != null && Model.Any())
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Имя</th>
+                <th>Адрес</th>
+                <th>Дата рождения</th>
+                <th>Email</th>
+                <th>Номер телефона</th>
+                <th>Количество вакансий</th>
+                <th>Действия</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@Html.DisplayForModel(item.Name)</td>
+                    <td>@Html.DisplayForModel(item.Address)</td>
+                    <td>@Html.DisplayForModel(item.BirthDate)</td>
+                    <td>@Html.DisplayForModel(item.Email)</td>
+                    <td>@Html.DisplayForModel(item.PhoneNumber)</td>
+                    <td>@Html.DisplayForModel(item.VacancyCount)</td>
+                    <td>
+                        <a asp-action="Edit" asp-route-id="@item.ID">Редактировать</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+else
+{
+    <p>Нет данных для отображения.</p>
+}
+
+<a asp-action="Add">Добавить данные</a>
+
+

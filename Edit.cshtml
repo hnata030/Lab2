@@ -1,0 +1,37 @@
+﻿@model DataBaseModel
+
+@{
+    ViewData["Title"] = "Редактировать данные";
+}
+
+<h2>Редактировать данные</h2>
+
+<form asp-action="Edit">
+    <input type="hidden" asp-for="ID" />
+    <div>
+        @Html.LabelFor(model => model.Name)
+        @Html.EditorFor(model => model.Name)
+    </div>
+    <div>
+        @Html.LabelFor(model => model.Address)
+        @Html.EditorFor(model => model.Address)
+    </div>
+    <div>
+        @Html.LabelFor(model => model.BirthDate)
+        @Html.EditorFor(model => model.BirthDate)
+    </div>
+    <div>
+        @Html.LabelFor(model => model.Email)
+        @Html.EditorFor(model => model.Email)
+    </div>
+    <div>
+        @Html.LabelFor(model => model.PhoneNumber)
+        @Html.EditorFor(model => model.PhoneNumber)
+    </div>
+    <div>
+        @Html.LabelFor(model => model.VacancyCount)
+        @Html.EditorFor(model => model.VacancyCount)
+    </div>
+    <button type="submit">Обновить</button>
+</form>
+
